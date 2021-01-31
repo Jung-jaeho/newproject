@@ -1,4 +1,3 @@
-![main_img0](./img/main_img0.png)
 
 # 1. 자주 사용하는 MIME type 정리
 
@@ -79,33 +78,33 @@ MIME TYPE은 메인타입/서브타입 식으로 구성된다. 예를 들면 ima
 
 ![main_img3](./img/main_img3.png)
 
-application/x-www-form-urlencoded
-
-text/plain
-multipart/form-data
+   - application/x-www-form-urlencoded
+   - text/plain
+   - multipart/form-data
+   
 HTTP에서 사용되는 마임 타입들이다. GET방식의 경우에는 http 요청 바디부분에 아무것도 들어가지 않기 때문에, 헤더의 컨텐츠 타입부분에 아무것도 넣지 않아도 된다. 하지만 POST방식에는 헤더의 컨텐츠 타입 부분을 반드시 명시해야 이 HTTP 패킷을 수신한 측에서 정확하게 복호화 할 수 있다.
 
 
 ## HTTP에 사용되는 MIME TYPE들
 
-application/x-www-form-urlencoded
+   - application/x-www-form-urlencoded<br>
 HTTP 요청 바디 부분에 KEY & VALUE의 형태의 입력값이 포함된다.
 
-text/plain
+   - text/plain<br>
 HTTP 요청 바디 부분에 텍스트가 들어간다.
 
-multipart/form-data
+   -  multipart/form-data<br>
 HTTP 요청 패킷 바디 부분에 boundary라고 불리는 구분자를 통해 html의 form태그의 각 입력값들이 구분되어져서 들어가 있는 형태이다.
 
 각 입력값 마다 마임 타입이 다르기 때문에 주타입이 multipart인것이다. 즉, 여러개의 파트로 구성되어 있다는 의미.
 
 왜 구분자를 통해서 입력값을 구분했냐면, HTML의 form태그에서는 텍스트 뿐만 아니라 바이너리 데이터도 인풋으로 담을 수 있기 때문이다. 바이너리 데이터는 GET방식에서의 구분자인 &을 구분자가 아닌 데이터로 인식하기 때문에 &이 아닌 다른 것으로 boundary라는것이 각 인풋을 구분하기 위해서 필요한것이다.
 
-
+<br>
 
 
 ### 정리하면서 혼자 생각한 것들
-
+~~~
 1. 업로드를 할때 이것이 PDF인지 JPG인지 client or Server에서는 모른다.
 2. 그래서 타입을 지정해준다. (왜냐하면 PDF만 받고 싶으니까) -> 그것을 확장자를 보고 판단한다.
 3. 쉽게 생각해서 카카오톡에 업로드 가능한 확장자가 있고 못하는 확장자가 있다.
@@ -116,7 +115,7 @@ HTTP 요청 패킷 바디 부분에 boundary라고 불리는 구분자를 통해
 8. 웹 쉘 업로드 공격 (파일 업로드 취약점)
 9. 예를 들어 .htaccess 파일 -> 리눅스에서는 화장자가 안보임
 10. 그래서 꼭 MIME TYPE을 검사해야 된다.
-
+~~~
 
 
 
