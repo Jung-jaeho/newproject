@@ -123,8 +123,6 @@ HTTP 요청 패킷 바디 부분에 boundary라고 불리는 구분자를 통해
 
 
 <참고 링크>
-
-### MIME TYPE<br>
 flask 파일업로드 검증하기 : https://ash84.io/2018/09/10/flask-upload-limit/
 <br>MIME_types 문서 : https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types
 <br>http://mommoo.tistory.com/60 [개발자로 홀로 서기]
