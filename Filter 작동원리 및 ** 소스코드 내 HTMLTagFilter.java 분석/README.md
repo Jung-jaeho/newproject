@@ -1,5 +1,5 @@
 
-# Filter 작동원리 및 hmall 소스코드 내 HTMLTagFilter.java 분석
+# Filter 작동원리 및 ** 소스코드 내 HTMLTagFilter.java 분석
 
 설명하기 전 크로스 사이트 스크립팅(XSS)에 대해서 알아야 합니다. 
 
@@ -60,7 +60,7 @@
 
 <br>
 
-## 2) hmall 소스코드 내 HTMLTagFilter.java 분석
+## 2) ** 소스코드 내 HTMLTagFilter.java 분석
 <br>
 
 ![main_img4](./img/main_img4.png)
