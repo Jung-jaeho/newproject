@@ -58,6 +58,10 @@ String str2 = "World";
 System.out.println("a.equals(b) : " + str1.equals(str2));
 ~~~
 
+NPE 발생 => `null은 객체가 아니기 때문에 당연히 "equlas" 라는 메서드도 없기 때문입니다.`
+
+
+
 반대로 인자로 전달되는 객체는 null이라도 NullPointerException가 발생하지 않습니다.
 ~~~
 String str1 = "Hello";
@@ -65,14 +69,16 @@ String str2 = null;
 System.out.println("a.equals(b) : " + str1.equals(str2));
 ~~~
 
-해결방안
+## 해결방안
 
-사실 이런 NullPointerException이 발생하는 것을 신경쓰고 싶지 않다면 Objects.equals()를 사용하여 두개의 객체를 비교할 수 있습니다.
+1) 사실 이런 NullPointerException이 발생하는 것을 신경쓰고 싶지 않다면 Objects.equals()를 사용하여 두개의 객체를 비교할 수 있습니다.
 
 ~~~
 System.out.println("str1 == str2 ? " + Objects.equals(str1, str2));
 System.out.println("str1 == str3 ? " + Objects.equals(str1, str3));
 ~~~
+
+   - Objects 클래스에 구현되어있는 코드를 보면 Null을 체크하기 때문에 NullPointerException이 발생하지 않습니다.
 
 ~~~
 // Objects.java
@@ -80,11 +86,6 @@ public static boolean equals(Object a, Object b) {
     return (a == b) || (a != null && a.equals(b));
 }
 ~~~
-
-
-
-
-
 
 
 
@@ -99,8 +100,6 @@ public static boolean equals(Object a, Object b) {
 
 <참고 링크>
 
-https://shlee0882.tistory.com/205
+https://goddaehee.tistory.com/126
 
-https://www.youtube.com/watch?v=inZMVkyyHTE
-
-https://khj93.tistory.com/entry/MyBatis-MyBatis%EB%9E%80-%EA%B0%9C%EB%85%90-%EB%B0%8F-%ED%95%B5%EC%8B%AC-%EC%A0%95%EB%A6%AC
+https://m.blog.naver.com/demonic3540/221856924291
